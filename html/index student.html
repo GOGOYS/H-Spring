@@ -52,22 +52,18 @@
         margin: 15px auto 0;
         border-collapse: collapse;
         width: 90%;
-      }
-      thead {
-        background-color: rgb(255, 187, 187);
-      }
-      table tr {
-        border-bottom: 1px solid #ccc;
-      }
-      thead tr {
-        border-top: 1px solid #ccc;
+        border: 1px solid #ccc;
       }
 
       table tr td,
       table tr th {
         font-size: 12px;
         padding: 5px 10px;
-        text-align: center;
+        border: 1px solid #ccc;
+      }
+
+      table tr th {
+        background-color: #ddd;
       }
 
       div button {
@@ -84,11 +80,29 @@
         position: relative;
       }
 
-      div {
+      #student {
         width: 90%;
         margin-top: 10px;
-        position: absolute;
-        left: 84%;
+        position: fixed;
+        left: 87%;
+      }
+
+      #adress {
+        display: flex;
+        margin-left: 5%;
+      }
+
+      #adressin {
+        background-color: #ddd;
+        display: inline-block;
+        padding: 5px 10px;
+        width: 17.4%;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      input {
+        width: 77.3%;
       }
     </style>
   </head>
@@ -106,38 +120,29 @@
     </header>
     <section>
       <table>
-        <thead>
-          <tr>
-            <th>학번</th>
-            <th>이름</th>
-            <th>전공</th>
-            <th>학년</th>
-            <th>주소</th>
-            <th>전화번호</th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
+            <th>학번</th>
             <td>20210001</td>
-            <td>홍길동</td>
+            <th>전공</th>
             <td>컴퓨터공학</td>
-            <td>3</td>
-            <td>서울시 동대문구</td>
-            <td>02-222-1234</td>
           </tr>
-
           <tr>
-            <td>20210002</td>
-            <td>성춘향</td>
-            <td>전자공학</td>
-            <td>3</td>
-            <td>전라북도 익산시</td>
-            <td>063-111-1234</td>
+            <th>이름</th>
+            <td>홍길동</td>
+            <th>학년</th>
+            <td>2</td>
           </tr>
         </tbody>
       </table>
-      <div>
-        <button>학생정보 추가</button>
+      <div id="adress">
+        <div id="adressin">
+          <p>주소</p>
+        </div>
+        <input type="text" placeholder="서울특별시" />
+      </div>
+      <div id="student">
+        <button>학생정보 수정</button>
       </div>
     </section>
   </body>
