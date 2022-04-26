@@ -9,6 +9,7 @@
 http://localhost:8080/app/student/detail?num=0001
  http://localhost:8080/app/student/datail/0001
  ```
-
+# Query string
+* 변수의 값이 그대로 노출되는 
 # Path Variable
-* 패스의 경로
+* 요청의 경로를 지정하여 요청

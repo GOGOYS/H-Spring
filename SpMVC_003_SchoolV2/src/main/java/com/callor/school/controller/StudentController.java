@@ -47,7 +47,13 @@ public class StudentController {
 	public String list(Model model) {
 		List<StudentVO> stList = stService.selectAll();
 		model.addAttribute("STUDENTS", stList);
-		return "student/list_view";
+		
+		/*
+		 * 리퀘스트 맵핑이 /student/list_view이기 때문에
+		 * return null을 수행하면 
+		 * return "/student/list_view"를 수행한것과 같다.
+		 */
+		return null;
 		
 	}
 	

@@ -73,7 +73,7 @@ div.botton-box a:hover{
 	box-shadow: 2px 2px 2px rgba(0,0,0,0.6);
 }
 </style>
-<script src="${rootPath}/static/js/student.js"></script>
+<script src="${rootPath}/static/js/student.js?ver=2022-04-26-001"></script>
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
 	<%@ include file="/WEB-INF/views/include/include_nav.jsp"%>
