@@ -11,17 +11,19 @@
 	table{
 		width:80%;
 		margin: 20px auto;
+		border-collapse: collapse;
 	}
 	
 	th, td{
 		padding: 12px;
 		text-align:left;
+		border: 1px solid #ddd;
 		
 	}
 	
 	th{
-		background-color: #ddd;
-		color: blue;
+		background-color: #eee;
+		color: red;
 	}
 </style>
 
