@@ -33,7 +33,6 @@ public class ExecV2 {
 					int _n = intSum[i];
 					intSum[i] = intSum[j];
 					intSum[j] = _n;
-					
 					_n = intKor[i];
 					intKor[i] = intKor[j];
 					intKor[j] = _n;
