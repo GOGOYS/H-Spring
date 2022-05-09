@@ -67,3 +67,35 @@
     <version>8.0.29</version>
 </dependency>
 ```
+
+### 한글 인코딩
+```
+	
+	<filter>
+		<filter-name>encKor</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>encKor</filter-name>
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
+```
+
+### 로그백
+```
+<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.11</version>
+		</dependency>
+```
