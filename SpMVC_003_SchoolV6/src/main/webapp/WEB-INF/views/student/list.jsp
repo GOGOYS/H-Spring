@@ -36,7 +36,10 @@
 		<th>전화번호</th>
 	</tr>
 </table>
-<script src="${rootPath}/static/js/list.js?ver=2022-05-09-003"></script>
+<script src="${rootPath}/static/js/std_list.js?ver=2022-05-10-001"></script>
 <div class="btn-box">
 	<button class="btn-red std-input">학생정보 등록</button>
+	<form action="${rootPath}/score">
+		<button type="button" class="btn-red">서버로 보내기</button>
+	</form>
 </div>
