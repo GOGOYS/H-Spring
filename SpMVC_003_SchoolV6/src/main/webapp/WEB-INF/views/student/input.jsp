@@ -38,6 +38,17 @@ form div:last-of-type {
 	margin: 10px auto;
 }
 
+form div:first-of-type div{
+	flex:3;
+	margin:0px;
+}
+form div:first-of-type input{
+	flex:2;
+	margin:0px;
+}
+form div:first-of-type button{
+	margin-left:5px;
+}
 form div button {
 	padding: 10px 20px;
 	background-color: red;
@@ -55,12 +66,16 @@ flex:1;
 <script>
 	const rootPath = "${rootPath}"
 </script>
-<script src="${rootPath}/static/js/std_input.js?ver=2022-05-10-123"></script>
+<script src="${rootPath}/static/js/std_input_save.js?ver=2022-05-12-1540"></script>
+<script src="${rootPath}/static/js/std_input.js?ver=2022-05-12-1515"></script>
 <h1>학생정보 등록</h1>
 <form method="POST">
 	<div>
-		<label>학번</label> <input type="text" name="st_num">
-		<button type="button" class="btn-green std-num-check">중복 검사</button>
+		<label>학번</label> 
+		<div>	
+			<input type="text" name="st_num">
+			<button type="button" class="btn-green std-num-check">중복 검사</button>
+		</div>
 	</div>
 	<div>
 		<label>이름</label> <input type="text" name="st_name">

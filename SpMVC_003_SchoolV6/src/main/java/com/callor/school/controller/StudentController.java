@@ -1,5 +1,9 @@
 package com.callor.school.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,10 +11,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.callor.school.model.StudentVO;
+import com.callor.school.service.StudentService;
 
 @Controller
 @RequestMapping("/student")
 public class StudentController {
+	
+	/*
+	 * setter주입
+	 */
+	@Autowired
+	@Qualifier("stService1")
+	private StudentService stService;
 	
 	
 	//localhost:8080/school/student또는
@@ -18,6 +30,9 @@ public class StudentController {
 	
 	@RequestMapping(value= {"","/"}, method=RequestMethod.GET)
 	public String list(Model model) {
+		List<StudentVO> stList = stService.selectAll();
+		
+		model.addAttribute("ST_LIST", stList);
 		model.addAttribute("LAYOUT", "ST_LIST");
 		return "home";
 	}
@@ -47,9 +62,14 @@ public class StudentController {
 		System.out.println("주소 : "+ st_addr);
 		return "home";
 	}
+	
+	
 	@ResponseBody
 	@RequestMapping(value="/st_num_check", method=RequestMethod.GET)
 	public String st_num_check(String st_num) {
-		return "Hello Korea";
+		StudentVO stVO = stService.findByNum(st_num);
+		if(stVO == null) return "NOT";
+	
+		return "USE";
 	}
 }
