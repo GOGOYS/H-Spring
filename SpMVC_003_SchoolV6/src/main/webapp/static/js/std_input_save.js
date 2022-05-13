@@ -1,36 +1,59 @@
-const save_cb = ()=>{
-  const st_num = document.querySelector("input[name='st_num']");
-      const st_name = document.querySelector("input[name='st_name']");
-      const st_dept = document.querySelector("input[name='st_dept']");
-      const st_grade = document.querySelector("input[name='st_grade']");
-      const st_tel = document.querySelector("input[name='st_tel']");
-      const st_addr = document.querySelector("input[name='st_addr']");
+const st_num_fetch = (st_num) => {
+  fetch(`${rootPath}/student/st_num_check?st_num=${st_num}`)
+    .then((res) => res.text())
+    //res 변수에서 text만 result로 보낸다
+    .then((result) => {
+      if (result === "USE") {
+        alert("이미 등록된 학번\n다시 입력하세요");
+        return false;
+      } else {
+        alert("사용 가능한 학번 입니다");
+        return true;
+      }
+    });
+};
 
-      //JS코드를 사용하여 Client Size Validation을 수행
-      //JS코드를 사용하여 Front 단에서 유효성 검사
-      //값을 입력하지 않았을때
-      //경고 메시지를 보여주고 유효성 검사 중단
-      if(st_num.value === ""){
-        alert("학번은 반드시 입력해야 합니다.")
-        st_num.focus();
-        return false;
-      }
-      if(st_name.value === ""){
-        alert("이름은 반드시 입력해야 합니다.")
-        st_name.focus();
-        return false;
-      }
-      if(st_dept.value === ""){
-        alert("학과는 반드시 입력해야 합니다.")
-        st_dept.focus();
-        return false;
-      }
-      if(st_grade.value === ""){
-        alert("학년은 반드시 입력해야 합니다.")
-        st_grade.focus();
-        return false;
-      }
-      /*
+const save_cb = () => {
+  const st_num = document.querySelector("input[name='st_num']");
+  const st_name = document.querySelector("input[name='st_name']");
+  const st_dept = document.querySelector("input[name='st_dept']");
+  const st_grade = document.querySelector("input[name='st_grade']");
+  const st_tel = document.querySelector("input[name='st_tel']");
+  const st_addr = document.querySelector("input[name='st_addr']");
+
+  //JS코드를 사용하여 Client Size Validation을 수행
+  //JS코드를 사용하여 Front 단에서 유효성 검사
+  //값을 입력하지 않았을때
+  //경고 메시지를 보여주고 유효성 검사 중단
+  if (st_num.value === "") {
+    alert("학번은 반드시 입력해야 합니다.");
+    st_num.focus();
+    return false;
+  }
+
+  const st_num_yes = st_num_fetch(st_num.value);
+
+  if (!st_num_yes) {
+    st_num.value = "";
+    st_num.focus();
+    return false;
+  }
+  if (st_name.value === "") {
+    alert("이름은 반드시 입력해야 합니다.");
+    st_name.focus();
+    return false;
+  }
+  if (st_dept.value === "") {
+    alert("학과는 반드시 입력해야 합니다.");
+    st_dept.focus();
+    return false;
+  }
+  if (st_grade.value === "") {
+    alert("학년은 반드시 입력해야 합니다.");
+    st_grade.focus();
+    return false;
+  }
+  /*
       Number() 함수
       JS에서 문자열형 숫자를 숫자형으로 바꾸는 함수
 
@@ -50,35 +73,35 @@ const save_cb = ()=>{
       변수에 이러한 값들이 저장되어 있을때
       if(변수)명령문 에서는 false가 된다.
       */
-      const num_grade = Number(st_grade.value)
-      alert(num_grade);
-      //아래의 if()명령문은 num_grade에 담긴 값이
-      //NaN이면 이라고 물어보는 명령이다
-      if(!num_grade){
-        alert("학년은 숫자로만 입력해야 합니다.")
-        st_grade.value= "";
-        st_grade.focus();
-        return false;
-      }
-      if(num_grade < 1 || num_grade > 4){
-        alert("학년은 1부터 4범위 내에서 입력해야 합니다.")
-        st_grade.value= "";
-        st_grade.focus();
-        return false;
-      }
-      if(st_tel.value === ""){
-        alert("전화번호는 반드시 입력해야 합니다.")
-        st_tel.focus();
-        return false;
-      }
-      if(st_addr.value === ""){
-        alert("주소는 반드시 입력해야 합니다.")
-        st_addr.focus();
-        return false;
-      }
+  const num_grade = Number(st_grade.value);
+  alert(num_grade);
+  //아래의 if()명령문은 num_grade에 담긴 값이
+  //NaN이면 이라고 물어보는 명령이다
+  if (!num_grade) {
+    alert("학년은 숫자로만 입력해야 합니다.");
+    st_grade.value = "";
+    st_grade.focus();
+    return false;
+  }
+  if (num_grade < 1 || num_grade > 4) {
+    alert("학년은 1부터 4범위 내에서 입력해야 합니다.");
+    st_grade.value = "";
+    st_grade.focus();
+    return false;
+  }
+  if (st_tel.value === "") {
+    alert("전화번호는 반드시 입력해야 합니다.");
+    st_tel.focus();
+    return false;
+  }
+  if (st_addr.value === "") {
+    alert("주소는 반드시 입력해야 합니다.");
+    st_addr.focus();
+    return false;
+  }
 
-      //이제 모든 유효성 검사를 정상적으로 통과했으므로 
-      //서버로 데이터를 전송하자
-      const form = document.querySelector("form")
-      form.submit();
-}
+  //이제 모든 유효성 검사를 정상적으로 통과했으므로
+  //서버로 데이터를 전송하자
+  const form = document.querySelector("form");
+  form.submit();
+};

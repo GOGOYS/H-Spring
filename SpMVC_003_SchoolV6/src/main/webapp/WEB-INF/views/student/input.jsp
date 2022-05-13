@@ -66,8 +66,8 @@ flex:1;
 <script>
 	const rootPath = "${rootPath}"
 </script>
-<script src="${rootPath}/static/js/std_input_save.js?ver=2022-05-12-1540"></script>
-<script src="${rootPath}/static/js/std_input.js?ver=2022-05-12-1515"></script>
+<script src="${rootPath}/static/js/std_input_save.js?ver=2022-05-13-1540"></script>
+<script src="${rootPath}/static/js/std_input.js?ver=2022-05-13-1515"></script>
 <h1>학생정보 등록</h1>
 <form method="POST">
 	<div>
