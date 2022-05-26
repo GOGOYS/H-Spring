@@ -7,11 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="icon" href="${rootPath}/static/images/favicon.ico" type="image/x-icon"/>
 </head>
 <body>
-<h1>안녕하세요</h1>
 
-<a href="${rootPath}/user/login">로그인 바로가기</a>
 </body>
 </html>
