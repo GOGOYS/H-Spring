@@ -36,15 +36,23 @@
 	.ok{
 		color:blue;
 	}
+	
+	button{
+		margin-left:10px;
+	}
+
+	button:not(:nth-of-type(1)){
+		margin-left:10px;
+	}
 </style>
 <script>
 	//js 파일에서 rootPath를 사용할 수 있도록 미리 JS 변수로 선언
 	const rootPath = "${rootPath}"
 </script>
-<script src="${rootPath}/static/js/join.js?ver=2022-05-26-014"></script>
+<script src="${rootPath}/static/js/join.js?ver=2022-05-27-004"></script>
 </head>
 <body>
-	<form class="join">
+	<form class="join" autocomplete="off" method="POST">
 		<fieldset>
 			<legend>회원가입</legend>
 			<div>

@@ -18,8 +18,8 @@ public class UserVO {
 	private String username;
 	private String password;
 	private String name;
-	private String role;
 	private String email;
+	private String role;
 	
 
 }

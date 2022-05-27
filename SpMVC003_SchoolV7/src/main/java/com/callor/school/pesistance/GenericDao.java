@@ -16,7 +16,7 @@ import java.util.List;
  */
 public interface GenericDao<VO, PK> {
 	public List<VO> selectAll();
-	public VO findByid(PK id);
+	public VO findById(PK id);
 	
 	public int insert(VO vo);
 	public int update(VO vo);
