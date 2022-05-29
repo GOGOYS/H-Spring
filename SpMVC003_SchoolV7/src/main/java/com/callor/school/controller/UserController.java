@@ -35,7 +35,7 @@ public class UserController {
 	/*
 	 * 1. login.form에서 username과 password 받기
 	 * 2. userVO 에 담겨서 받게 된다
-	 * 3. userVo UserService.login에게 전달한다.
+	 * 3. userVO UserService.login에게 전달한다.
 	 * 4. UserService.login() method는 username과 password 검사
 	 * 5. 정상적인(username, password가 일치) 정보이면
 	 * 6. 나머지 user 정보를 userVO에 담아서 return
@@ -52,7 +52,7 @@ public class UserController {
 		
 		//server와 view사이에서 약속된 protocol을 사용하기 위하여 변수를 선언하고
 		String loginMessage= null;
-		//2.로그인 폼에서 전송된 데이터중 usename으로 findById() 즉 SelectOne(username)을 실행한다.
+		//2.로그인 폼에서 전송된 데이터중 username으로 findById() 즉 SelectOne(username)을 실행한다.
 		//그리고 결과를 loginUserVO에 담는다.
 		//만약 username 정보가 user table에 없으면
 		//결과는 null이고, 정보가 있으면 관련데이터가 포함된 vo가 만들어진다.

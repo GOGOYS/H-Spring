@@ -14,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 public class HomeController {
 	
 	
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		
