@@ -35,8 +35,8 @@ form input, form button {
 
 		<fieldset>
 			<legend>로그인</legend>
-			<input name="username" placeholder="USER NAME"> <input
-				name="password" type="password" placeholder="PASSWORD">
+			<input name="username" placeholder="USER NAME">
+			<input name="password" type="password" placeholder="PASSWORD">
 			<button>로그인</button>
 		</fieldset>
 	</form>
@@ -51,10 +51,12 @@ form input, form button {
 				<b>권한 : </b>${USER.role}</div>
 			<div>
 				<b>이메일 : </b>${USER.email}</div>
-			<div><a href="${rootPath}/user/logout">로그아웃</a></div>
+			<div>
+				<a href="${rootPath}/user/logout">로그아웃</a>
+			</div>
 		</c:if>
 		<c:if test="${empty USER}">
-		<div>로그인 정보가 없습니다.</div>
+			<div>로그인 정보가 없습니다.</div>
 		</c:if>
 	</div>
 </body>
