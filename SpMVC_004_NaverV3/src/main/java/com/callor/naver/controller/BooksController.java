@@ -2,6 +2,8 @@ package com.callor.naver.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.callor.naver.config.QualifierConfig;
 import com.callor.naver.model.BookVO;
 import com.callor.naver.service.BookService;
+import com.callor.school.model.UserVO;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -36,9 +39,10 @@ public class BooksController {
 		 */
 		return "books/list";
 	}
-	@RequestMapping(value="/list")
-	public String list(Model model) {
+	@RequestMapping(value={"/",""},method=RequestMethod.POST, produces="application/json;charset=UTF-8")
+	public String list(BookVO bookVO,HttpSession session, Model model) {
 		
+	
 		/*
 		 * return null 형식은
 		 * 암시적으로 어떤 jsp 파일을 rendering할 것인지 알려주는 것이다.
@@ -46,12 +50,10 @@ public class BooksController {
 		 * null을 return하면 Spring에서 자체적으로 폴더/파일 형식으로
 		 * 구성을 하여준다.
 		 */
+		BookVO VO = bookService.selectAll(bookVO.getIsbn());
 		
-		List<BookVO> bookList = bookService.selectAll();
-		//bookList에 담긴 데이터를 BOOKS 이름으로 변수에 담아
-		//jsp 파일로 보내겠다.
-		model.addAttribute("BOOKS", bookList);
-		return null;
+		session.setAttribute("BOOKLIST", VO);
+		return "books/list";
 	}
 	
 	
@@ -74,7 +76,8 @@ public class BooksController {
 	@RequestMapping(value="/insert", method=RequestMethod.POST)
 	public String insert(BookVO bookVO) {
 		log.debug("도서정보 : "+ bookVO.toString());
-		return null;
+		bookService.save(bookVO);
+		return "books/list";
 	}
 
 }

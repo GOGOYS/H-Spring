@@ -5,7 +5,7 @@
   
 
 
- <mapper namespace="com.callor.school.pesistance.UserDao">
+ <mapper namespace="com.callor.naver.persistance.BookDao">
  
  	<select id="selectAll" resultType="BookVO">
  		SELECT * FROM tbl_books
@@ -38,7 +38,7 @@
  				#{description},
  				#{pubdate},
  				#{link},
- 				#{image},
+ 				#{image}
  				)
  	</insert>
  	
@@ -47,14 +47,14 @@
  				title = #{title},
  				author = #{author},
  				publisher = #{publisher},
- 				price =#{price}
- 				discount =#{discount}
- 				description =#{description}
- 				pubdate =#{pubdate}
- 				link =#{link}
+ 				price =#{price},
+ 				discount =#{discount},
+ 				description =#{description},
+ 				pubdate =#{pubdate},
+ 				link =#{link},
  				image =#{image}
  				
- 		WHERE isbn = #{usbn}
+ 		WHERE isbn = #{isbn}
  	</update>
  	
  	<delete id="delete">

@@ -1,11 +1,31 @@
 package com.callor.naver.service.impl;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.Collections;
 import java.util.List;
 
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import com.callor.naver.config.NaverConfig;
 import com.callor.naver.config.QualifierConfig;
 import com.callor.naver.model.BookVO;
+import com.callor.naver.model.NaverParent;
 import com.callor.naver.persistance.BookDao;
 import com.callor.naver.service.BookService;
 
@@ -56,7 +76,7 @@ public class BookServiceImplV1 implements BookService{
 	public List<BookVO> selectAll() {
 		
 		List<BookVO> booklist = bookDao.selectAll();
-		return null;
+		return booklist;
 	}
 
 	@Override
@@ -82,6 +102,15 @@ public class BookServiceImplV1 implements BookService{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	@Override
+	public BookVO save(BookVO bookVO) {
+		List<BookVO> booklist = bookDao.selectAll();
+		
+		bookDao.insert(bookVO);
+		return null;
+	}
+
 	
 	
 }

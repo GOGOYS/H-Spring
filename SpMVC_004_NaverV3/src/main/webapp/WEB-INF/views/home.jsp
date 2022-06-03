@@ -31,7 +31,7 @@
 	<nav>
 		<ul>
 			<li><a href="${rootPath}/">홈</a></li>
-			<li><a href="${rootPath}/books/list">도서정보</a></li>
+			<li><a href="${rootPath}/books">도서정보</a></li>
 			<li><a href="${rootPath}/news/list">뉴스정보</a></li>
 			<li><a href="${rootPath}/movies">영화정보</a></li>
 			<li><a href="${rootPath}/naver">네이버체험하기</a></li>

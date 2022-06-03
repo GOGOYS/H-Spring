@@ -18,7 +18,7 @@ public class NaverController {
 	
 	private final NaverService naverService; 
 	
-	public NaverController( @Qualifier(QualifierConfig.SERVICE.NAVER_V2) NaverService naverService) {
+	public NaverController( @Qualifier(QualifierConfig.SERVICE.NAVER_V1) NaverService naverService) {
       this.naverService	= naverService;
 	}
 	
