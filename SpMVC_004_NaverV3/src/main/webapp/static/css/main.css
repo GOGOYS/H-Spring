@@ -20,4 +20,6 @@
 	
 	section.main{
 		flex:1;
+		width:76%;
+		margin: 0 auto;
 	}

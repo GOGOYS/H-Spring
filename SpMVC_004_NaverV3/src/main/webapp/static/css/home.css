@@ -4,23 +4,33 @@
 	header, nav, footer 등의 설정
 */
 
+
 header{
 	
-	padding: 1.2rem;
+	padding: 1rem;
 	text-align: center;
-	background-color: rgb(193,226,237);
+	background-color: #fff;
 	color: rgb(47,41,41);
 	font-weight: 900;
 }
 
+
+header p{
+	margin-top:3px;
+	font-size:32px;
+	color: #05D686;
+}
+
 nav{
-	background-color: skyblue;
+	background-color: #05D686;
 	color: white;
 }
 
 nav ul{
 	list-style: none;
 	display: flex;
+	width: 80%;;
+	margin:0 auto;
 }
 
 nav li{
@@ -30,6 +40,10 @@ nav li{
 	font-weight: 900;
 	font-size: 20px;
 	transition: border 0.7s ease-out;
+}
+
+nav li:nth-of-type(6){
+	margin-left:auto;
 }
 
 nav li:hover{
@@ -57,4 +71,18 @@ a{
 nav a{
 	color: inherit;
 }
+
+footer{
+	background-color:#404040;
+	text-align: center;
+	height: 50px;
+	
+}
+
+address{
+	padding-top:10px;
+	color:#ccc;
+}
+
+
 

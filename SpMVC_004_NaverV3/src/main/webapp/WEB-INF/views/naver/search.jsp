@@ -4,11 +4,8 @@
 <c:set value="${pageContext.request.contextPath}" var="rootPath" />
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Insert title here</title>
+
+<%@ include file ="/WEB-INF/views/head.jsp" %>
 <style>
 	form{
 		display:flex;
@@ -26,9 +23,10 @@
 	flex:1;
 	}
 </style>
-</head>
+
 <body>
-	
+	<%@ include file ="/WEB-INF/views/nav.jsp" %>
+	<section class="main">
 	<form method=POST>
 		<select name="cat">
 			<option value="BOOK">도서검색</option>
@@ -38,5 +36,7 @@
 		<input name="search" placeholder="검색어를 입력하세요">
 		<button>검색</button>
 	</form>	
+	</section>
+	<%@ include file ="/WEB-INF/views/footer.jsp" %>
 </body>
 </html>

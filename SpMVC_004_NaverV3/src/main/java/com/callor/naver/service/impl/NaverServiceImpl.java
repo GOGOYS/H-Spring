@@ -77,8 +77,8 @@ public class NaverServiceImpl implements NaverService{
 				httpCon.setRequestMethod("GET");
 				
 				//client 값을 속성으로 저장하라
-				httpCon.setRequestProperty(NaverConfig.HEADER.ID, NaverConfig.NAVER_CLIENT_ID);
-				httpCon.setRequestProperty(NaverConfig.HEADER.SEC, NaverConfig.NAVER_CLIENT_SEC);
+				httpCon.setRequestProperty(NaverConfig.HEADER_ID, NaverConfig.NAVER_CLIENT_ID);
+				httpCon.setRequestProperty(NaverConfig.HEADER_SEC, NaverConfig.NAVER_CLIENT_SEC);
 				
 				
 				//Naver에게 QueryString정보를 보내고 
