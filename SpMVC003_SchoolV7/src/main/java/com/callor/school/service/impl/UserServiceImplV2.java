@@ -1,13 +1,10 @@
 package com.callor.school.service.impl;
 
-import java.util.List;
-
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.callor.school.model.UserVO;
 import com.callor.school.pesistance.UserDao;
-import com.callor.school.service.UserService;
 
 
 @Service("userServiceV2")
