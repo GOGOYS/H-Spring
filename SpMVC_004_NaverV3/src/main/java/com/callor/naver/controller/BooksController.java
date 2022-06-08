@@ -50,9 +50,9 @@ public class BooksController {
 		 * null을 return하면 Spring에서 자체적으로 폴더/파일 형식으로
 		 * 구성을 하여준다.
 		 */
-		BookVO VO = bookService.selectAll(bookVO.getIsbn());
+		List<BookVO> bookList = bookService.selectAll();
 		
-		session.setAttribute("BOOKLIST", VO);
+		session.setAttribute("BOOKLIST", bookList);
 		return "books/list";
 	}
 	

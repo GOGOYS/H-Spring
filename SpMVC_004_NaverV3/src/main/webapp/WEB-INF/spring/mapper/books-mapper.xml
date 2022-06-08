@@ -35,10 +35,10 @@
  				#{publisher},
  				#{price},
  				#{discount},
- 				#{description},
- 				#{pubdate},
- 				#{link},
- 				#{image}
+ 				#{description,jdbcType=VARCHAR},
+				#{pubdate,jdbcType=VARCHAR},
+				#{link,jdbcType=VARCHAR},
+				#{image,jdbcType=VARCHAR}
  				)
  	</insert>
  	

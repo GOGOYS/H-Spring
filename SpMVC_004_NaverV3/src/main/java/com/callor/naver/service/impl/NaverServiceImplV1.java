@@ -42,8 +42,8 @@ public class NaverServiceImplV1 extends NaverServiceImpl{
 		//Http 프로토콜에 보안정보를 세팅하여
 		//Naver로 전송할 준비
 		HttpHeaders headers = new HttpHeaders();
-		headers.set(NaverConfig.HEADER_ID, NaverConfig.NAVER_CLIENT_ID);
-		headers.set(NaverConfig.HEADER_SEC, NaverConfig.NAVER_CLIENT_SEC);
+		headers.set(NaverConfig.HEADER.ID, NaverConfig.NAVER_CLIENT_ID);
+		headers.set(NaverConfig.HEADER.SEC, NaverConfig.NAVER_CLIENT_SEC);
 		
 		//JSON 데이터 type으로 받겠다.
 		headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));

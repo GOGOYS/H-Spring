@@ -26,7 +26,7 @@ import java.util.List;
  * 비로소 구체화 된다.
  */
 public interface GenericDao<VO, PK> {
-	public List<VO> selectAll(String string);
+	public List<VO> selectAll();
 	public VO findById(PK id);
 	public int insert(VO vo);
 	public int update(VO vo);
